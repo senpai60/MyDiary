@@ -142,9 +142,23 @@ html, body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     padding: 10px; /* Internal padding */
     box-sizing: border-box; /* Ensure padding doesn't overflow */
+    flex-direction: column;
+    cursor: pointer;
+}
+.display .card:hover{
+    background-color: var(--l-headings);
+    color: var(--l-para);
 }
 
+.display .card:hover .card-title{
+    color: var(--l-para);
+}
 
+.card-title{
+    text-decoration: underline;
+    color: var(--l-form);
+    min-height: 50%;
+}
 
 .display::-webkit-scrollbar {
     width: 12px; /* Width of the scrollbar */

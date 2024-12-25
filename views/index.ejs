@@ -25,17 +25,22 @@
 
       <div class="hero">
         <div class="display">
-          <div class="card">Card 1</div>
-          <div class="card">Card 2</div>
-          <div class="card">Card 3</div>
-          <div class="card">Card 4</div>
-          <div class="card">Card 5</div>
-          <div class="card">Card 5</div>
-          <div class="card">Card 5</div>
-          <div class="card">Card 5</div>
-          <div class="card">Card 5</div>
-          <div class="card">Card 5</div>
+          <% if (diaries.length > 0) { %>
+            <% diaries.forEach(diary => { %>
+              <div class="card">
+                <div class="card-title">
+                  <h4><%= diary.title %></h4>
+                </div>
+                <div class="card-date">
+                  <h6><%= diary.date %></h6>
+                </div>
+              </div>
+            <% }) %>
+          <% } else { %> <!-- Corrected the syntax here -->
+            <p>No entries yet.</p>
+          <% } %>
         </div>
+        
         <div class="diary-inputs">
           <form action="/written" method="post">
             <input type="text" name="title" placeholder="Title" />
