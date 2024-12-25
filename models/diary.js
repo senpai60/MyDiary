@@ -9,12 +9,34 @@ mongoose.connect('mongodb://127.0.0.1:27017/DiaryBook', {
 
 
 const DiarySchema = mongoose.Schema({
-    title:String,
-    content:String,
-    sidecontent1:String,
-    sidecontent2:String,
-    sidecontent3:String,
-    date:String,
+    title: {
+        type: String,
+        required: true
+      },
+      content: {
+        type: String,
+        required: true
+      },
+      sidecontent1: {
+        type: String,
+        default: ""
+      },
+      sidecontent2: {
+        type: String,
+        default: ""
+      },
+      sidecontent3: {
+        type: String,
+        default: ""
+      },
+      date: {
+        type: String,
+        required: true
+      },
+      mood: {
+        type: [String], // Array of strings to store top 3 moods
+        required: true
+      }
 })
 
 module.exports = mongoose.model('diary',DiarySchema)

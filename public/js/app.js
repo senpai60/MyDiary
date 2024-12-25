@@ -62,3 +62,69 @@ if (sideContentContainer.querySelectorAll('.side-content').length === 0) {
   const initialDiv = createSideContentDiv();
   sideContentContainer.appendChild(initialDiv);
 }
+
+// AutoSuggetions
+// document.addEventListener("DOMContentLoaded", function () {
+//     const myTextarea = document.getElementById("content");
+//     const awesompleteInstance = new Awesomplete(myTextarea, {
+//       minChars: 1,
+//       autoFirst: true,
+//       maxItems: 5,
+//     });
+  
+//     let debounceTimeout;
+  
+//     // Listen for input events and update the suggestions
+//     myTextarea.addEventListener("input", function () {
+//       clearTimeout(debounceTimeout); // Clear any ongoing debounce timeout
+  
+//       debounceTimeout = setTimeout(function () {
+//         const query = myTextarea.value;
+  
+//         // If query is empty, no need to show suggestions
+//         if (query === "") {
+//           awesompleteInstance.list = [];
+//           return;
+//         }
+  
+//         // Fetch suggestions from the backend
+//         fetch(`/suggestions?query=${query}`)
+//           .then((response) => response.json())
+//           .then((data) => {
+//             // Update Awesomplete's suggestion list with new data
+//             awesompleteInstance.list = data;
+//           })
+//           .catch((err) => {
+//             console.error("Error fetching suggestions:", err);
+//           });
+//       }, 300); // Debounce for smoother typing experience
+//     });
+  
+//     // Handle space or word selection
+//     myTextarea.addEventListener("keyup", function (e) {
+//       const query = myTextarea.value;
+  
+//       // Reset list when space is pressed or text is cleared
+//       if (query.endsWith(" ") || query.length === 0) {
+//         awesompleteInstance.list = []; // Reset list after space to prevent extra suggestions
+//       }
+//     });
+  
+//     // Listen for when a suggestion is selected
+//     myTextarea.addEventListener("awesomplete-selectcomplete", function () {
+//       const query = myTextarea.value;
+  
+//       // Clear the suggestions when a word is selected
+//       awesompleteInstance.list = [];
+  
+//       // If the input ends with space, it means the user is ready to type again
+//       if (query.endsWith(" ")) {
+//         // Reset suggestions to start fresh after a word is typed
+//         awesompleteInstance.list = [];
+//       } else {
+//         // Focus the input to keep suggestions available for the next word
+//         myTextarea.focus();
+//       }
+//     });
+//   });
+  
