@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LookDiary</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="logo"><h3>LookDiary!</h3></div>
+        <div class="search">
+          <form action="" class="search">
+            <input type="search" />
+            <input type="date" />
+            <input type="search" placeholder="Search" />
+          </form>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="display">
+          <div class="card">Card 1</div>
+          <div class="card">Card 2</div>
+          <div class="card">Card 3</div>
+          <div class="card">Card 4</div>
+          <div class="card">Card 5</div>
+          <div class="card">Card 5</div>
+          <div class="card">Card 5</div>
+          <div class="card">Card 5</div>
+          <div class="card">Card 5</div>
+          <div class="card">Card 5</div>
+        </div>
+        <div class="diary-inputs">
+          <form action="/written" method="post">
+            <input type="text" name="title" placeholder="Title" />
+            <textarea
+              name="content"
+              id="content"
+              placeholder="Start From Here"
+              spellcheck="false"
+            ></textarea>
+            <div class="main-side">
+                <div class="side-content">
+                    <input
+                      type="text"
+                      name="sidecontent"
+                      id="sidecontent"
+                      placeholder="Add Side Content"
+                    />
+      
+                    <div class="dlt-add">
+                      <i class="ri-add-fill"></i>
+                      <!-- <i class="ri-subtract-fill"></i> -->
+                    </div>
+                  </div>
+            </div>
+            <button type="submit">Add To Diary</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
